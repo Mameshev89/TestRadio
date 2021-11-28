@@ -71,6 +71,7 @@ class RadioManTest {
         RadioMan run = new RadioMan();
         run.setCurrentVolume(9);
         run.increaseVolume();
+        run.setCurrentVolume(10);
         run.increaseVolume();
         int expected = 10;
         int actual = run.getCurrentVolume();
@@ -87,4 +88,6 @@ class RadioManTest {
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
     }
+
+
 }
