@@ -18,7 +18,8 @@ class RadioManTest {
     @Test
     void setCurrentWave() {
         RadioMan run = new RadioMan();
-        run.setCurrentWave(11);
+        run.setCurrentWave(-1);
+        run.setCurrentWave(10);
         int expected = 0;
         int actual = run.getCurrentWave();
         assertEquals(expected, actual);
@@ -27,9 +28,10 @@ class RadioManTest {
     @Test
     void next() {
         RadioMan run = new RadioMan();
-        run.setCurrentWave(1);
+        run.setCurrentWave(8);
         run.next();
-        int expected = 2;
+        run.next();
+        int expected = 0;
         int actual = run.getCurrentWave();
         assertEquals(expected, actual);
     }
@@ -37,7 +39,8 @@ class RadioManTest {
     @Test
     void prev() {
         RadioMan run = new RadioMan();
-        run.setCurrentWave(0);
+        run.setCurrentWave(1);
+        run.prev();
         run.prev();
         int expected = 9;
         int actual = run.getCurrentWave();
@@ -57,6 +60,7 @@ class RadioManTest {
     void setCurrentVolume() {
         RadioMan run = new RadioMan();
         run.setCurrentVolume(-1);
+        run.setCurrentVolume(11);
         int expected = 0;
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
@@ -65,9 +69,10 @@ class RadioManTest {
     @Test
     void increaseVolume() {
         RadioMan run = new RadioMan();
-        run.setCurrentVolume(1);
+        run.setCurrentVolume(9);
         run.increaseVolume();
-        int expected = 2;
+        run.increaseVolume();
+        int expected = 10;
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
     }
@@ -75,7 +80,8 @@ class RadioManTest {
     @Test
     void LowVolume() {
         RadioMan run = new RadioMan();
-        run.setCurrentVolume(0);
+        run.setCurrentVolume(1);
+        run.lowVolume();
         run.lowVolume();
         int expected = 0;
         int actual = run.getCurrentVolume();
