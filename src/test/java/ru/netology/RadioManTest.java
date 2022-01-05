@@ -5,10 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioManTest {
-
+    RadioMan run = new RadioMan(10);
     @Test
     void getCurrentWave() {
-        RadioMan run = new RadioMan();
         run.getCurrentWave();
         int expected = 0;
         int actual = run.getCurrentWave();
@@ -17,7 +16,6 @@ class RadioManTest {
 
     @Test
     void setCurrentWave() {
-        RadioMan run = new RadioMan();
         run.setCurrentWave(-1);
         run.setCurrentWave(10);
         int expected = 0;
@@ -27,7 +25,6 @@ class RadioManTest {
 
     @Test
     void next() {
-        RadioMan run = new RadioMan();
         run.setCurrentWave(8);
         run.next();
         run.next();
@@ -38,7 +35,6 @@ class RadioManTest {
 
     @Test
     void prev() {
-        RadioMan run = new RadioMan();
         run.setCurrentWave(1);
         run.prev();
         run.prev();
@@ -49,7 +45,6 @@ class RadioManTest {
 
     @Test
     void getCurrentVolume() {
-        RadioMan run = new RadioMan();
         run.getCurrentVolume();
         int expected = 0;
         int actual = run.getCurrentVolume();
@@ -58,9 +53,8 @@ class RadioManTest {
 
     @Test
     void setCurrentVolume() {
-        RadioMan run = new RadioMan();
         run.setCurrentVolume(-1);
-        run.setCurrentVolume(11);
+        run.setCurrentVolume(101);
         int expected = 0;
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
@@ -68,18 +62,16 @@ class RadioManTest {
 
     @Test
     void increaseVolume() {
-        RadioMan run = new RadioMan();
-        run.setCurrentVolume(9);
+        run.setCurrentVolume(99);
         run.increaseVolume();
         run.increaseVolume();
-        int expected = 10;
+        int expected = 100;
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
     }
 
     @Test
     void LowVolume() {
-        RadioMan run = new RadioMan();
         run.setCurrentVolume(1);
         run.lowVolume();
         run.lowVolume();
