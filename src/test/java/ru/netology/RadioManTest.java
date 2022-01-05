@@ -81,4 +81,82 @@ class RadioManTest {
     }
 
 
+
+
+    RadioMan run2=new RadioMan();
+
+    @Test
+    void getCurrentWaveForRadioMan2() {
+        run2.getCurrentWave();
+        int expected = 0;
+        int actual = run2.getCurrentWave();
+        assertEquals(expected, actual);
+    }
+    @Test
+    void setCurrentWaveForRadioman2() {
+        run2.setCurrentWave(-1);
+        run2.setCurrentWave(10);
+        int expected = 0;
+        int actual = run2.getCurrentWave();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void next2() {
+        run2.setCurrentWave(8);
+        run2.next();
+        run2.next();
+        int expected = 0;
+        int actual = run2.getCurrentWave();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void prev2() {
+        run2.setCurrentWave(1);
+        run2.prev();
+        run2.prev();
+        int expected = 9;
+        int actual = run2.getCurrentWave();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void getCurrentVolumeForRadioMan2() {
+        run2.getCurrentVolume();
+        int expected = 0;
+        int actual = run2.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setCurrentVolumeForRadioMan2() {
+        run2.setCurrentVolume(-1);
+        run2.setCurrentVolume(101);
+        int expected = 0;
+        int actual = run2.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increase2() {
+        run2.setCurrentVolume(99);
+        run2.increaseVolume();
+        run2.increaseVolume();
+        int expected = 100;
+        int actual = run2.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void LowVolume2() {
+        run2.setCurrentVolume(1);
+        run2.lowVolume();
+        run2.lowVolume();
+        int expected = 0;
+        int actual = run2.getCurrentVolume();
+        assertEquals(expected, actual);
+    }
+
+
 }
