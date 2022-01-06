@@ -34,7 +34,7 @@ public class RadioMan {
         if (currentWave < numberOffStation-1) {
             currentWave++;
         } else {
-            currentWave = 0;
+            currentWave = minWaveStation;
         }
 
     }
