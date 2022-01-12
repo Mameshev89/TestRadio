@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioManTest {
     RadioMan run = new RadioMan(10);
+    RadioMan run2=new RadioMan();
+
     @Test
     void getCurrentWave() {
         run.getCurrentWave();
@@ -79,11 +81,6 @@ class RadioManTest {
         int actual = run.getCurrentVolume();
         assertEquals(expected, actual);
     }
-
-
-
-
-    RadioMan run2=new RadioMan();
 
     @Test
     void getCurrentWaveForRadioMan2() {

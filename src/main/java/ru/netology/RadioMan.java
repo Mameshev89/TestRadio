@@ -1,20 +1,20 @@
 package ru.netology;
 
 public class RadioMan {
-    private int numberOffStation=10;
+    private int numberOffStation = 10;
     private int currentWave;
     private int currentVolume;
-    private int minWaveStation=0;
-    private int maxVolume=100;
-    private int minVolume=0;
+    private int minWaveStation = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
 
     public RadioMan(int numberOffStation) {
         this.numberOffStation = numberOffStation;
     }
 
-    public RadioMan(){
+    public RadioMan() {
 
-   }
+    }
 
     public int getCurrentWave() {
         return currentWave;
@@ -24,14 +24,14 @@ public class RadioMan {
         if (currentWave < minWaveStation) {
             return;
         }
-        if (currentWave > numberOffStation-1) {
+        if (currentWave > numberOffStation - 1) {
             return;
         }
         this.currentWave = currentWave;
     }
 
     public void next() {
-        if (currentWave < numberOffStation-1) {
+        if (currentWave < numberOffStation - 1) {
             currentWave++;
         } else {
             currentWave = minWaveStation;
@@ -43,7 +43,7 @@ public class RadioMan {
         if (currentWave > minWaveStation) {
             currentWave--;
         } else {
-            currentWave = numberOffStation-1;
+            currentWave = numberOffStation - 1;
         }
     }
 
